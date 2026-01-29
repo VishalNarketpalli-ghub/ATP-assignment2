@@ -1,60 +1,3 @@
-// Assignment 1: 
-// -------------
-// Task Management System (ToDo App Modules):
-//      Building a task manager like Todoist
-
-// Requirements:
-//      Create a modular todo app with 3 separate files:
-
-       
-          
-//         i. validator.js - Input validation
-//                       // TODO: Export these validation functions
-                      
-//                       // 1. Validate task title (not empty, min 3 chars)
-function validateTitle(title) {
-    if(title.trim() != "" || title.trim().length > 3){
-        return true;
-    }return false;
-}
-
-//                       // 2. Validate priority (must be: low, medium, high)
-function validatePriority(priority) {
-    if(priority === "low" || priority === "medium" || priority === "high") return true;
-    else return false;
-}
-                      
-//             // 3. Validate due date (must be future date)
-function validateDueDate(date) {
-    let currentDate = new Date();
-    let dueDate = new Date(date);
-    if(currentDate < dueDate) return true;
-    else return false;
-}
-
-export {validateTitle, validatePriority, validateDueDate}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Assignment 2: 
 // -------------
 // E-Commerce Shopping Cart System :
@@ -273,3 +216,4 @@ export {validateTitle, validatePriority, validateDueDate}
 //                         console.log('\n=== Checkout ===');
 //                         const order = processPayment('upi', 'WELCOME10');
 //                         console.log(order);
+                  
