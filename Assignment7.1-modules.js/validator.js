@@ -27,7 +27,8 @@ function validatePriority(priority) {
 //             // 3. Validate due date (must be future date)
 function validateDueDate(date) {
     let currentDate = new Date();
-    if(currentDate < date) return true;
+    let dueDate = new Date(date);
+    if(currentDate < dueDate) return true;
     else return false;
 }
 
