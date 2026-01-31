@@ -1,0 +1,71 @@
+### READ ALL USERS
+GET http://localhost:4000/user-api/users
+
+
+### Create User
+POST http://localhost:4000/user-api/users
+Content-Type: application/json
+
+{
+    "username": "newusr",
+    "password": "abc1234",
+    "age": 25
+}
+
+### READ USER BY ID
+GET http://localhost:4000/user-api/users/697dba942d6b091c4e78c118
+
+
+
+### UPDATE USER BT ID
+PUT http://localhost:4000/user-api/users/697dba942d6b091c4e78c118
+Content-Type: application/json
+
+{
+    "username": "aaaa",
+    "password": "abc1234",
+    "age": 19
+}
+
+
+### Delete User BY ID
+DELETE http://localhost:4000/user-api/users/697dba942d6b091c4e78c118
+
+
+
+
+
+
+
+### Product APIs
+POST http://localhost:4000/product-api/products
+Content-Type: application/json
+
+{
+    "pid": 100,
+    "productName": "Laptop",
+    "price": 75000
+}
+
+
+###Get All Products
+GET http://localhost:4000/product-api/products
+
+
+###Get Product By ID
+GET http://localhost:4000/product-api/products/697e2a3171744ee925a87e35
+
+
+###Update Product By ID
+PUT http://localhost:4000/product-api/products/697e2a3171744ee925a87e35
+Content-Type: application/json
+
+{
+    "pid": 100,
+    "productName": "Gaming Laptop",
+    "price": 85000
+}
+
+
+### delete using id
+DELETE http://localhost:4000/product-api/products/697e2a3171744ee925a87e35
