@@ -1,0 +1,66 @@
+GET http://127.0.0.1:3000/user-api/users
+
+###
+
+POST http://127.0.0.1:3000/user-api/users
+Content-Type: application/json
+
+{
+    "id" : 400,
+    "name" : "bhi",
+    "age" : 9
+}
+
+###
+PUT http://127.0.0.1:3000/user-api/users
+Content-Type: application/json
+
+{
+    "id" : 10,
+    "name" : "abhinav",
+    "age" : 20
+}
+
+
+### Read a user by id
+GET http://localhost:3000/user-api/users/100
+
+
+
+###
+DELETE http://127.0.0.1:3000/user-api/users/200
+
+
+
+
+
+### product --- =>
+GET http://localhost:3000/product-api/products
+
+
+
+###
+GET http://localhost:3000/product-api/products/100
+
+
+
+### 
+POST http://localhost:3000/product-api/products
+Content-Type: application/json
+
+{
+    "productId" : 100,
+    "name" : "bat",
+    "price" : 799,
+    "brand" : "MRF"
+}
+
+
+
+###
+PUT http://localhost:3000/product-api/products
+
+
+
+### 
+DELETE http://localhost:3000/product-api/products
