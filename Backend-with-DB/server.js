@@ -33,12 +33,10 @@ app.use('/product-api', productApp);
 // error handeling middlewear
 // this is default error handeler middlewear
 // function errorHandler(err, req, res, next) {
-//     err.status(200).json({ message: "error", reason: err.message })
+//     res.json({ message: "error", reason: err.message })
 // }
 
 
 app.use((err, req, res, next) => {
-    err.status(200).json({ message: "error", reason: err.message })
+    res.json({ message: "error", reason: err.message })
 })
-
-// 

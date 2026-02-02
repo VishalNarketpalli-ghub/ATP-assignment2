@@ -22,7 +22,7 @@ PUT http://localhost:4000/user-api/users/697dba942d6b091c4e78c118
 Content-Type: application/json
 
 {
-    "username": "aaaa",
+    "username": "newusr",
     "password": "abc1234",
     "age": 19
 }
@@ -31,6 +31,17 @@ Content-Type: application/json
 ### Delete User BY ID
 DELETE http://localhost:4000/user-api/users/697dba942d6b091c4e78c118
 
+
+
+
+### User authentacation(login) req
+POST http://localhost:4000/user-api/auth
+Content-Type: application/json
+
+{
+    "username": "newusr",
+    "password": "abc1234"
+}
 
 
 
