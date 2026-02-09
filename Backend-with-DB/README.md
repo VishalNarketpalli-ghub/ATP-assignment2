@@ -97,28 +97,42 @@ b. protected route -> only " authenticated user " can access -> profile, dashboa
 
 ## storage of token in browser
 
+=> cookies are sent automatically with every request
 
 => first part of the token is header, second part is payload and third part is signature
 
-=>  local storage 0r session storage content can be accessed by js of the browser hence not secure
+=> local storage 0r session storage content can be accessed by js of the browser hence not secure
 
-=>  normal cookies can be accessed by js of the browser hence not secure
+=> normal cookies can be accessed by js of the browser hence not secure
 
 => to store the tokens of the session we dont use db
 
 => we use cookies with httpOnly flag set to true because its more secure as the server can not access the cookie from the client side script
 
-=>  hence this is the saffest place to store the JWT token after user authentication
+=> hence this is the saffest place to store the JWT token after user authentication
 
-
-ex: 
-    res.cookie("Token", signedToken, {
-        httpOnly: true,
-        secure: false,
-        sameSite: "lax"
-    })
+ex:
+res.cookie("Token", signedToken, {
+httpOnly: true,
+secure: false,
+sameSite: "lax"
+})
 
 => here secure flag is set to false because we are using http protocol if we use https then set it to true
 
-=> sameSite is set to lax to avoid csrf attacks 
+=> sameSite is set to lax to avoid csrf attacks
+
+=> when the token is in cookies the cookie is automatically sent to server with every request hence no need to manually send the token in headers
+
+### making authenticated request
+
+    when client application makes req after successful login, the http only cookie will be attached to every request automatically by the browser
+
+    the middleware in express can extract the cookie from req using cookie-parser module
+
+    a. installation
+    ```sh
+     npm install cookie-parser
+     ```
+
 ---

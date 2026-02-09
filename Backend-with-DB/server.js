@@ -2,6 +2,8 @@ import exp from "express"
 import { userApp } from "./APIs/UserAPI.js"
 import { connect } from "mongoose"
 import { productApp } from "./APIs/ProductAPI.js"
+import cookieParser from "cookie-parser"
+
 const app = exp()
 
 
@@ -21,6 +23,10 @@ async function connectDB() {
 }
 
 app.use(exp.json());
+
+// add cookie parser middleware
+app.use(cookieParser())
+
 
 connectDB();
 

@@ -2,6 +2,7 @@ import exp from "express"
 import { UserModel } from "../models/UserModel.js"
 import { hash, compare } from 'bcryptjs'
 import jwt from 'jsonwebtoken'
+import { verifyUserToken } from "../middlewares/verifyToken.js"
 
 
 export const userApp = exp.Router()
@@ -74,16 +75,22 @@ userApp.post("/auth", async (req, res) => {
         return res.status(404).json({ message: "Invalid password" })
     }
     // 
-    let signedToken = jwt.sign({ username: userCred.username }, "abcdef", { expiresIn: 30 })
+    let signedToken = jwt.sign({ username: userCred.username }, "abcdef", { expiresIn: '30s' })
     // { expiresIn: 10 } id we give "10" its milli sec
 
     // save token as http only cookie
-    res.cookie("Token", signedToken, {
+    res.cookie("token", signedToken, {
         httpOnly: true,
         secure: false,
         sameSite: "lax"
     })
     // send token as response
     res.status(200).json({ message: "Login successfully", token: signedToken })
+})
+
+
+// test routs
+userApp.get("/test", verifyUserToken, (req, res) => {
+    res.status(200).json({ message: "test - done" })
 })
 

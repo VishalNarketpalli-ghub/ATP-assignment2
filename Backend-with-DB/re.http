@@ -47,6 +47,14 @@ Content-Type: application/json
 
 
 
+### req for protected rout
+GET http://localhost:4000/user-api/test
+Content-Type: application/json
+
+
+
+
+
 
 ### Product APIs
 POST http://localhost:4000/product-api/products
