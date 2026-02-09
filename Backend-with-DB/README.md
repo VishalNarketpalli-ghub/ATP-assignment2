@@ -76,6 +76,14 @@ b. hashing -> it is one way function, hence more secure
 a. public route -> everyone can access -> login, signin
 b. protected route -> only " authenticated user " can access -> profile, dashboard
 
+    => protected rout:
+        1. client request (POST) login
+        2. server stores the token in client cookie
+        3. res to client that login successful
+
+    => when any other req is done by client then req is sent with cookie
+    => if token is not there in cookie it will make the normal req
+
 => user authentication means submitting some credentials and getting tokens
 
 => once the token recieved by the user then he is an athenticated user
