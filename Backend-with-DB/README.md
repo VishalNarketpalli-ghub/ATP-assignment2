@@ -143,4 +143,13 @@ sameSite: "lax"
      npm install cookie-parser
      ```
 
+### json
+
+    json is not jsObj
+    it is a neutral language for all cooding languages
+    to parse from jsObj to json we use -> Stringify
+        ex: JSON.stringify(obj)
+    to parse from json to jsObj we use -> parse
+        ex: JSON.parse(jsonString)
+
 ---
