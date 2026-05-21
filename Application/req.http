@@ -1,0 +1,10 @@
+### judge0 request
+POST http://localhost:5000/run
+Content-Type: application/json
+
+{
+  "code": "#include <iostream>\nint main() { std::cout << \"Hello, World!\"; return 0; }",
+  "languageId": 54
+}
+
+
